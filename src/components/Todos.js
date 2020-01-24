@@ -7,9 +7,8 @@ export default function Todos() {
     { id: 2, task: "Sleep", completed: true },
     { id: 3, task: "Code", completed: false }
   ];
-  const [list, setList] = useState(initialState);
-  console.log(list);
 
+  const [list, setList] = useState(initialState);
   const [newTask, setNewTask] = useState("");
 
   const deleteTask = id => {
@@ -44,22 +43,11 @@ export default function Todos() {
       setList(newList)
   };
 
-
-  // const completeTask = (id) => {
-  //   let newList = list.map((item) => {
-  //     if (item.id === id) {
-  //       return {}
-  //     }
-  //     setList(newList)
-  //   })
-  // };
-  // https://scotch.io/tutorials/4-uses-of-javascripts-arraymap-you-should-know
-
   return (
     <div>
       <h1>To-Do List</h1>
+      {!list.length ? <p>All done!</p> : ""}
       <ul>
-        <p>New task: {newTask}</p>
         {list.map(item => {
           return (
             <Todo
@@ -81,6 +69,7 @@ export default function Todos() {
         type="text"
         value={newTask}
       />
+      &nbsp;
       <button onClick={() => handleAddTodo(newTask)}>Add Todo</button>
     </div>
   );
