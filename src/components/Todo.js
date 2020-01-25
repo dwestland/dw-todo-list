@@ -8,7 +8,7 @@ export default function Todo(props) {
   return (
     <div>
       <li>
-        <span className={completed ? "task": ""}>{task}</span>
+        <span className={completed ? "taskCompleted" : ""}>{task}</span>
         &nbsp;
         <button onClick={() => completeTask(id)}>Completed</button>
         &nbsp;

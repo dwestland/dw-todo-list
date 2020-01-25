@@ -51,8 +51,8 @@ export default function Todos() {
         {list.map(item => {
           return (
             <Todo
-              completeTask={completeTask}
               completed={item.completed}
+              completeTask={completeTask}
               deleteTask={deleteTask}
               id={item.id}
               key={item.id}
